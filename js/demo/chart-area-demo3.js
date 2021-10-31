@@ -47,7 +47,7 @@ var myLineChart = new Chart(ctx, {
         pointHoverBorderColor: 'rgba(78, 115, 223, 1)',
         pointHitRadius: 10,
         pointBorderWidth: 2,
-        data: [33, 35, 34, 36, 34, 35, 32, 36, 35, 36, 38, 37],
+        data: [3.3, 3.5, 3.4, 3.6, 3.4, 3.5, 3.2, 3.6, 3.5, 3.6, 3.8, 3.7],
       },
     ],
   },
@@ -83,7 +83,7 @@ var myLineChart = new Chart(ctx, {
             padding: 10,
             // Include a dollar sign in the ticks
             callback: function (value, index, values) {
-              return number_format(value);
+              return value;
             },
           },
           gridLines: {
@@ -116,7 +116,7 @@ var myLineChart = new Chart(ctx, {
       callbacks: {
         label: function (tooltipItem, chart) {
           var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-          return datasetLabel + ': ' + number_format(tooltipItem.yLabel);
+          return datasetLabel + ': ' + tooltipItem.yLabel;
         },
       },
     },
